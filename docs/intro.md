@@ -6,6 +6,10 @@ Cryptography is the art and science of keeping secrets.
 
 A secret is data you know that no one else knows.
 
+Here's the current cryptography landscape:
+
+![Cryptography Landscape](../static/img/landscape.png)
+
 
 ## What are the cryptographic guarantees?
 

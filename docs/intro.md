@@ -1,47 +1,38 @@
----
-sidebar_position: 1
----
+# Cryptography
 
-# Tutorial Intro
+## Introduction to Cryptography
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Cryptography is the art and science of keeping secrets.
 
-## Getting Started
+A secret is data you know that no one else knows.
 
-Get started by **creating a new site**.
+Here's the current cryptography landscape:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+![Cryptography Landscape](../../pba-docs/static/img/landscape.png)
 
-### What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## What are the cryptographic guarantees?
 
-## Generate a new site
+### Data Authenticity:
 
-Generate a new Docusaurus site using the **classic template**.
+Data Authenticity is, example, verifying that the letter you received really comes from the person it claims to be from.
 
-The classic template will automatically be added to your project after you run the command:
+Digital signatures help ensure messages really come from the stated person, and are hard to fake.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+### Data Integrity:
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+Data Integrity is now checking if the letter you received has been tampered with during delivery, example the seal has been opened.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+### Non Repudiation
 
-## Start your site
+In non repudiation, once the letter is sent, the sender of the message cannot deny that they sent the letter. 
 
-Run the development server:
+### Data Confidentiality:
 
-```bash
-cd my-website
-npm run start
-```
+Only someone who knows a secret (eg the password to access the letter) will access the private letter's contents.
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+N.B Confidentiality in communication channels like when Alice and Bob send secret messages, involves two sub types:
+- **Forward Secrecy:** If someone learns Alice's secret key, they still can't read her future messages after a certain point.
+- **Backward Secrecy:** If someone finds out Alice's secret key, they can't read her past messages that were sent before a certain time.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+N.B!! Cryptography does not guarantee **Data Availability:** Data is available to people 24 7.
